@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="c:\Users\lenovo\Downloads\michie.jpg" alt="" class="image">
+<script>
+    let images = [
+        'images/a.jpg',
+        'images/b.jpg',
+        'images/c.jpg'
+];
+
+let randomIndex = Math.floor(Math.random() * images.length);
+
+const imgEl = document.createElement('img');
+imgEL.src = images[randomIndex];
+document.body.append(imgEL);
+
+
+</script>
+</body>
+</html>

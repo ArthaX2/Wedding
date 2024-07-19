@@ -1,0 +1,9 @@
+img.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin-left: 16rem;
+    height: 15rem;
+    width: 10rem;
+}
