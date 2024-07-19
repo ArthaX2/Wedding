@@ -6,169 +6,160 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Dancing+Script&family=Lato&display=swap" rel="stylesheet">
-    <title>Undangan</title>
+    <title>Wedding Invitation</title>
     <style>
         * {
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            transition: background-color 0.5s, color 0.5s;
+            height: 100vh;
+            background-color: #f0f0f0;
+            color: black;
+            font-family: 'Lato', sans-serif;
+            transition: background-color 0.3s, color 0.3s, font-family 0.3s;
         }
 
-        body.dark-mode {
-            background-color: #121212;
+        .dark-mode {
+            background-color: black;
+            background-repeat: no-repeat;
+            background-size: cover;
             color: #e0e0e0;
+            font-family: 'Bitter', serif;
         }
 
         .container {
             min-width: 300px;
             max-width: 500px;
-            margin: 0px auto;
-        }    
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-        section.page {
+        .page {
             width: 100%;
             min-height: 100vh;
-            background-size: cover;
-            margin-bottom: 10px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: background-color 0.5s;
-        }
-
-        section.page.one {
-            height: 39rem;
-            font-size: 20pt;
-            font-family: 'Bitter';
-            color: black;
+            background-size: cover;
+            border-radius: 15px;
+            animation: fadeIn 2s ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            margin-bottom: 20px;
             background-image: url(https://i.pinimg.com/564x/8f/81/78/8f8178b3427b313295f6c6032817f3b4.jpg);
         }
 
-        section.page.one > div > h1 {
-            font-size: 40pt;
-            font-family: 'Dancing Script';
-            color: rgb(255, 168, 81);
+        .cover {
+            background-image: url(https://i.pinimg.com/564x/8f/81/78/8f8178b3427b313295f6c6032817f3b4.jpg);
         }
 
-        p {
+        .dark-mode .cover {
+            background-image: url(https://i.pinimg.com/originals/34/7c/cd/347ccd8f0e6a3e47fdbdf1d2284a4eb2.jpg);
+        }
+
+        .dark-mode .page {
+            background-image: url(https://i.pinimg.com/564x/ab/fc/97/abfc973f828fc131db3f88d48d590a4a.jpg);
+        }
+
+        .page > div, .page > p, .page > h1, .page > h2 {
             text-align: center;
-            padding: 5pt;
-            margin-top: 7.5rem;
+            margin-bottom: 20px;
+            font-family: 'Bitter';
         }
 
-        h1 {
+        h1.tle {
             text-align: center;
-        }
-
-        div.guest {
-            font-size: 15pt;
-        }
-
-        div.edge {
-            background-image: url(https://www.pngmart.com/files/15/Pink-Flowers-Border-PNG.png);
-            height: 40cm;
-            width: 13.2cm;
-            background-size: cover;
-            background-repeat: no-repeat;
-            margin-top: 27rem;
-            margin-left: 1.8rem;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
-        }
-
-        section.page.two {
-            justify-content: space-evenly;
-            background-image: url(https://i.pinimg.com/564x/2c/bf/69/2cbf69ea65cfa2d7bf13f56a41e4698b.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
             font-family: 'Dancing Script';
-            font-size: 12pt;
-        }   
-
-        section.page.two > div > h1 {
-            font-size: 35pt;
-            font-family: 'Dancing Script';
-            color: orange;
+            color: rgb(255, 163, 52);
+            font-size: 7vh;
+            margin-bottom: 2rem;
         }
 
-        div.card {
-            padding: 15pt;
-            width: 250px;
-            height: 300pt;
-            background-color: rgba(255, 250, 224, 0.845);
+        h2.tle {
+            text-align: center;
+            font-family: 'Dancing Script';
+            color: rgb(255, 163, 52);
+            font-size: 6vh;
+        }
+
+        .cover .title h1 {
+            font-size: 2rem;
+        }
+
+        .cover .title p {
+            font-size: 1.2rem;
+        }
+
+        .invitation .card {
+            max-width: 300px;
+            height: 60%;
+            background-color: rgba(255, 163, 57, 0.315);
             border-radius: 50px;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            font-family: 'Bitter';
+            padding: 20px;
+            border: white 2px solid;
+            animation: glow 2s infinite alternate;
+            box-shadow: white 10px 10px;
         }
 
-        div.circle {
-            width: 150pt;
-            height: 150pt;
-            border-radius: 50pt;
-            background-image: url(https://i.pinimg.com/564x/94/7f/f1/947ff1d4b3b2f4d3f041c980940e3fab.jpg);
-            background-size: cover;
-            margin-bottom: 50px;
-        }
-
-        div.line {
+        .circle {
             width: 150px;
-            height: 3px;
-            background-color: darkgray;
-            margin: 10px auto;
-        }
-
-        section.page.three {
-            justify-content: space-evenly;
-            background-image: url(https://i.pinimg.com/564x/fd/ac/59/fdac59c5fa9612a7bed5c7dff11b28d8.jpg);
+            height: 150px;
+            border-radius: 50%;
+            background-color: lightgreen;
+            background-image: url(meme.gif);
             background-size: cover;
-            background-repeat: no-repeat;
-            font-family: 'Dancing Script';
-            font-size: 20pt;
-            color: gold;
+            animation: spin 10s linear infinite;
+            box-shadow: white 0 0 9px;
         }
 
-        div.title {
-            text-align: center;
-            font-size: 20pt;
-            color: black;
-            font-family: 'Bitter';
-            margin-top: 18rem;
+        .line {
+            width: 150px;
+            height: 1px;
+            background-color: black;
+            margin: 10px 0;
         }
 
-        div.image {
-            border-radius: 1rem;
-            width: 400px;
-            height: 300px;
-            background-image: url(nzgzenni.png);
-            background-size: cover;
-            margin: 15px;
-            margin-bottom: 50px;
+        .countdown {
+            font-size: 1.5rem;
         }
 
-        div.person {
-            font-size: 30pt;
-            color: rgb(255, 161, 94);
-            font-family: 'Dancing Script';
-            margin-bottom: 8rem;
+        div.border {
+            animation: spin 10s linear infinite;
         }
 
-        img.border {
-            height: 7cm;
-            width: 7cm;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .genap {
@@ -177,79 +168,270 @@
             align-items: center;
             padding-bottom: 4rem;
             justify-content: space-evenly;
+            animation: float 2s infinite;
         }
 
-        .dark-mode .card {
-            background-color: rgba(50, 50, 50, 0.9);
-            color: #e0e0e0;
+        h1.person2 {
+            font-family: 'Dancing Script';
+            font-size: 7vh;
+            color: rgb(255, 211, 65);
         }
 
-        .dark-mode section.page {
+        .timer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .timer h3 {
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .counter {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+        }
+
+        .counter__box {
+            text-align: center;
+            width: 89px;
+            height: 103px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0.25rem;
+        }
+
+        .counter__time {
+            font-size: 3rem;
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        .counter__duration {
+            font-size: 0.8rem;
+            text-transform: capitalize;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dots {
+            font-size: 52px;
+            margin: -0.75rem;
+            padding: 0;
+        }
+
+        .black-white {
+            background: linear-gradient(
+                to top,
+                #ffd4eb 0%,
+                #ffa8f9 50%,
+                #9bd9ff 50%,
+                #ffb0f7 100%
+            );
+        }
+
+        .sky-blue {
+            background: linear-gradient(
+                to top,
+                #ffbbf0 0%,
+                #009edb 50%,
+                rgba(203, 190, 255, 0.95) 50%,
+                rgba(127, 206, 236, 0.95) 100%
+            );
+        }
+
+        .dark-mode .black-white {
+            background: linear-gradient(
+                to top,
+                #ff46a9 0%,
+                #ef2ae2 50%,
+                #5ac0ff 50%,
+                #ff41ec 100%
+            );
+        }
+
+        .dark-mode .sky-blue {
+            background: linear-gradient(
+                to top,
+                #ff67de 0%,
+                #29bbf5 50%,
+                rgba(130, 99, 255, 0.95) 50%,
+                rgba(47, 190, 247, 0.95) 100%
+            );
+        }
+
+        h3.cd {
+            color: black;
+            font-family: 'Bitter';
+        }
+
+        .dark-mode h3.cd {
+            color: white;
+            font-family: 'Bitter';
+        }
+
+        @media (max-width: 768px) {
+            .page {
+                padding: 10px;
+            }
+
+            .invitation .card {
+                width: 90%;
+                height: auto;
+            }
+
+            .timer {
+                gap: 0.5rem;
+            }
+
+            .counter__box {
+                width: 60px;
+                height: 70px;
+            }
+
+            .counter__time {
+                font-size: 2rem;
+            }
+
+            .dots {
+                font-size: 32px;
+            }
+        }
+
+        .btn.toggle-dark-mode {
+            border: none;
+            color: #fff;
             background-color: #333;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        .dark-mode-button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+        .btn.toggle-dark-mode:hover {
+            background-color: #555;
+            transform: scale(1.05);
         }
+
+        .btn.toggle-dark-mode:focus {
+            outline: none;
+        }
+        
     </style>
 </head>
 <body>
+    <button id="toggle-dark-mode" class="btn toggle-dark-mode">Dark Mode</button>
     <div class="container">
-        <section class="page one">
-            <div class="edge">
-                <div class="title">
-                    <p>The wedding of</p>
-                </div>
-                <div class="genap">
-                    <div class="fade-in-image">
-                        <div class="border">
-                            <img src="https://png.pngtree.com/png-clipart/20230410/ourmid/pngtree-beautiful-circle-border-with-green-and-gold-leaves-png-image_6697106.png" alt="" class="border">
-                        </div>
-                    </div>
-                </div>
-                <div class="person">
-                    <h1 class="person">Nick and Chelsea</h1>
-                    <p>We are inviting Mr. & Mrs. to our wedding</p>
+        <!-- Cover Page -->
+        <section class="page cover">
+            <div class="title">
+                <p>The Wedding of</p>
+            </div>
+            <div class="genap">
+                <div class="border">
+                    <img src="https://png.pngtree.com/png-clipart/20230410/ourmid/pngtree-beautiful-circle-border-with-green-and-gold-leaves-png-image_6697106.png" alt="" class="border">
                 </div>
             </div>
-            <div class="add">
-                <p>Saya adalah pemburu</p>
+            <div class="person">
+                <h1 class="tle">Vino & Karina</h1>
+                <p>Thursday, August 29, 2024</p>
+            </div>
+            <div class="guest-name">
+                <p>We are waiting for your attendance</p>
+                <p>Albob, BSc.</p>
             </div>
         </section>
-        <section class="page two">
-            <div class="title">
-                <h1>The Beloved</h1>
-                <h2>Chelsea & Nick</h2>
-                <p>We would like to invite Mr. and Ms. to our wedding.</p>
-            </div>
+
+        <!-- Invitation Page -->
+        <section class="page invitation">
+            <h2 class="tle">The beloved</h2>
+            <h1 class="person2">Vino & Karina</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe sunt dicta quam necessitatibus aliquid. Explicabo consequuntur non voluptates molestias quas optio veritatis natus ab distinctio aspernatur quaerat, tenetur id alias.</p>
             <div class="card">
                 <div class="circle"></div>
-                <h1>Nick Sh</h1>
+                <h1>Victoria Kimberly, SE.</h1>
                 <div class="line"></div>
-                <p>Putra Pertama</p>
-                <p>Bapak Wario</p>
+                <p>Mr. Vino</p>
                 <p>&</p>
-                <p>Ibu Daisy</p>
+                <p>Mrs. Karina</p>
             </div>
         </section>
-        <section class="page three">
-            <h2>Wedding Map</h2>
-            <div class="h1">
-                <h1>We are waiting for your presence</h1>
+
+        <!-- Closing Page -->
+        <section class="page closing">
+            <h2>Event countdown</h2>
+            <div class="timer">
+                <h3 class="cd">Wedding countdown:</h3>
+                <div class="counter">
+                    <div class="counter__box black-white">
+                        <p class="counter__time" id="days"></p>
+                        <p class="counter__duration">days</p>
+                    </div>
+                    <div class="counter__box sky-blue">
+                        <p class="counter__time" id="hours"></p>
+                        <p class="counter__duration">hours</p>
+                    </div>
+                    <p class="dots">:</p>
+                    <div class="counter__box sky-blue">
+                        <p class="counter__time" id="minutes"></p>
+                        <p class="counter__duration">minutes</p>
+                    </div>
+                    <p class="dots">:</p>
+                    <div class="counter__box sky-blue">
+                        <p class="counter__time" id="seconds"></p>
+                        <p class="counter__duration">seconds</p>
+                    </div>
+                </div>
             </div>
-            <div class="image"></div>
+            <p>We really appreciate your coming to our wedding party!</p>
         </section>
     </div>
-    <button class="dark-mode-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
     <script>
-        function toggleDarkMode() {
+        var countDownDate = new Date("August 29, 2024 11:36:10").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = '00';
+                document.getElementById("hours").innerHTML = '00';
+                document.getElementById("minutes").innerHTML = '00';
+                document.getElementById("seconds").innerHTML = '00';
+            }
+        }, 1000);
+
+        const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
+        toggleDarkModeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-        }
+        });
     </script>
 </body>
 </html>
