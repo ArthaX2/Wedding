@@ -6,7 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Dancing+Script&family=Lato&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Wedding Invitation</title>
+    
     <style>
         * {
             margin: 0;
@@ -15,7 +17,7 @@
         }
 
         body {
-            height: 100vh;
+            height: 0vh;
             background-color: #f0f0f0;
             color: black;
             font-family: 'Lato', sans-serif;
@@ -77,9 +79,11 @@
             color: rgb(255, 163, 52);
             font-size: 7vh;
             margin-bottom: 2rem;
+            font-weight: bold;
         }
 
         h2.tle {
+            font-weight: bold;
             text-align: center;
             font-family: 'Dancing Script';
             color: rgb(255, 163, 52);
@@ -96,8 +100,8 @@
 
         .invitation .card {
             max-width: 300px;
-            height: 60%;
-            background-color: rgba(255, 163, 57, 0.315);
+            height: 30%;
+            background-color: rgba(247, 176, 255, 0.315);
             border-radius: 50px;
             display: flex;
             flex-direction: column;
@@ -121,6 +125,8 @@
             box-shadow: white 0 0 9px;
         }
 
+        
+
         .line {
             width: 150px;
             height: 1px;
@@ -130,10 +136,6 @@
 
         .countdown {
             font-size: 1.5rem;
-        }
-
-        div.border {
-            animation: spin 10s linear infinite;
         }
 
         @keyframes fadeIn {
@@ -173,6 +175,7 @@
         }
 
         h1.person2 {
+            font-weight: bold;
             font-family: 'Dancing Script';
             font-size: 7vh;
             color: rgb(255, 211, 65);
@@ -202,8 +205,8 @@
 
         .counter__box {
             text-align: center;
-            width: 89px;
-            height: 103px;
+            width: 73px;
+            height: 95px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -311,8 +314,8 @@
 
         .btn.toggle-dark-mode {
             border: none;
-            color: #fff;
-            background-color: #333;
+            color: white;
+            background-color: rgb(219, 57, 255);
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
@@ -322,60 +325,408 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
+            justify-content: center;
+            align-items: center;
+            margin-left: 8rem;
+        }
+
+        .dark-mode .btn.toggle-dark-mode  {
+            background-color: #ec9fff;
+            color: white;
         }
 
         .btn.toggle-dark-mode:hover {
-            background-color: #555;
+            background-color: rgb(161, 255, 118);
+            color: blue;
             transform: scale(1.05);
         }
 
         .btn.toggle-dark-mode:focus {
             outline: none;
+            position: sticky;
         }
-        
+
+        @keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 35px); }
+    100%   { transform: translate(0, -0px); }   
+}
+/* 
+        div.border {
+	height: 20rem;
+    width: 20rem;
+    border-radius: 100%;
+    background-image: url(https://th.bing.com/th/id/OIP._m82zS8BargM_oyC--CWOwHaHa?rs=1&pid=ImgDetMain);
+    background-position: center;
+    background-size: cover; 
+    box-shadow: -0.063rem 0.063rem 1.25rem 0.063rem var(--yellow);
+    background-color: #009edb;
+    justify-content: space-evenly;
+    align-items: center;
+} */
+
+div.border img {
+    animation: spin 10s linear infinite;
+	height: 20rem;
+    width: 20rem;
+    border-radius: 100%;
+    /* background-image: url(meme.gif); */
+    background-position: center;
+    background-size: cover;
+    box-shadow: -0.063rem 0.063rem 1.25rem 0.063rem var(--yellow);
+    /* background-color: #009edb; */
+    /* background-image: url(https://th.bing.com/th/id/OIP._m82zS8BargM_oyC--CWOwHaHa?rs=1&pid=ImgDetMain); */
+    display: inline-block;
+
+}
+
+div.border {
+    border-radius: 100%;
+    background-position: center;
+    background-size: cover;
+    box-shadow: -0.063rem 0.063rem 1.25rem 0.063rem var(--yellow);
+    background-image: url("https://th.bing.com/th/id/OIP._m82zS8BargM_oyC--CWOwHaHa?rs=1&pid=ImgDetMain");
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.dark-mode div.border {
+	/* height: 17rem;
+    width: 17rem; */
+    border-radius: 100%;
+    background-position: center;
+    background-size: cover;
+    box-shadow: -0.063rem 0.063rem 1.25rem 0.063rem var(--yellow);
+    background-image: url("https://i.pinimg.com/originals/c2/7c/67/c27c67e7b5abfc7c691a2d9dc902d260.jpg");
+    display: inline-block;
+    margin-top: 2rem;
+    
+
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* margin-left: 30rem; */
+}
+
+.sidebar {
+    position: fixed;
+    left: 0px;
+    width: 250px;
+    height: 100%;
+    background: rgb(253, 220, 255);
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+
+.sidebar .top {
+    font-size: 22px;
+    color: black;
+    text-align: center;
+    line-height: 70px;
+    background-image: linear-gradient(to right, rgb(255, 183, 238), rgb(250, 196, 255), rgb(242, 177, 255),  rgb(195, 201, 255), rgb(147, 255, 210));
+    font-weight: bold;
+    font-family: 'bitter';
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: black;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    transition: all 0.5s ease;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'bitter';
+}
+
+ul li:hover a {
+    padding-left: 100px;
+    background: rgb(252, 177, 255); 
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.sidebar ul a i {
+    margin-right: 16px;
+}
+
+
+#check {
+    display: none;
+}
+
+label #btn {
+    position: fixed;
+    cursor: pointer;
+    /* background: #ffffff; */
+    background-image: url(https://pluspng.com/img-png/wedding-png--2000.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1.7rem;
+    width: 2.5rem;
+    border-radius: 3px;
+    /* margin-top: 5rem; */
+    
+}
+
+label #open {
+    margin-top: 2rem;
+    position: fixed;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 50px;
+    height: 5rem;
+    width: 7.3rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://pluspng.com/img-png/wedding-png--2000.png);
+    position:fixed;
+    z-index: 1000;
+    }
+
+label #open {
+    left: 0;
+    top: 10;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    padding: 6px 12px;
+    transition: all 0.5s ease;
+}
+
+label #btn {
+    z-index: 1111;
+    left: 195px;
+    top: 25px;
+    font-size: 20px;
+    color: #000000;
+    padding: 4px 9px;
+    transition: all 0.5s ease;
+}
+
+#check:checked~.sidebar {
+    left:-250px;
+}
+
+#check:checked~label #open {
+    left:30px;
+    font-size: 20px;
+}
+
+#check:checked~label #btn {
+    left:-195px;
+}
+
+.dark-mode .sidebar {
+    position: fixed;
+    left: 0px;
+    width: 250px;
+    height: 100%;
+    background: rgb(2, 0, 133);
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+
+.dark-mode .sidebar .top {
+    font-size: 22px;
+    color: wheat;
+    text-align: center;
+    line-height: 70px;
+    background-image: linear-gradient(to right, rgb(3, 70, 255), rgb(0, 3, 209), rgb(29, 0, 176),  rgb(61, 0, 147), rgb(4, 0, 133));
+    font-weight: bold;
+    font-family: 'bitter';
+}
+
+.dark-mode .sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    transition: all 0.5s ease;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'bitter';
+}
+
+.dark-mode ul li:hover a {
+    padding-left: 100px;
+    background: rgb(80, 77, 255); 
+    color: white;
+    text-decoration: none;
+}
+
+.dark-mode .sidebar ul a i {
+    margin-right: 16px;
+}
+
+label #btn {
+    position: fixed;
+    cursor: pointer;
+    /* background: #ffffff; */
+    background-image: url(https://pluspng.com/img-png/wedding-png--2000.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1.7rem;
+    width: 2.5rem;
+    border-radius: 3px;
+    /* margin-top: 5rem; */
+    
+}
+
+label #open {
+    margin-top: 2rem;
+    position: fixed;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 50px;
+    height: 5rem;
+    width: 7.3rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://pluspng.com/img-png/wedding-png--2000.png);
+    position:fixed;
+    z-index: 1000;
+    }
+
+label #open {
+    left: 0;
+    top: 10;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    padding: 6px 12px;
+    transition: all 0.5s ease;
+}
+
+label #btn {
+    z-index: 1111;
+    left: 195px;
+    top: 25px;
+    font-size: 20px;
+    color: #000000;
+    padding: 4px 9px;
+    transition: all 0.5s ease;
+}
+
+#check:checked~.sidebar {
+    left:-250px;
+}
+
+#check:checked~label #open {
+    left:30px;
+    font-size: 20px;
+}
+
+#check:checked~label #btn {
+    left:-195px;
+}
+
+div.card.mb-3 {
+    background-color: rgb(255, 219, 225);
+    height: 50rem;
+}
+
+.dark-mode .card.mb-3 {
+    background-color: rgb(25, 0, 114);
+    height: 50rem;
+}
+
     </style>
 </head>
-<body>
-    <button id="toggle-dark-mode" class="btn toggle-dark-mode">Dark Mode</button>
+<body >
+    
+    <main>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fa fa-arrow-right" id="open"></i>
+        </label>
+        <div class="sidebar">
+            <div class="top">
+                Wedding™
+            </div>  
+            <ul>
+                <li><a class="#" href="#home"><i class="fa fa-home"></i> Home</a></li>
+                <li><a class="#" href="#us"><i class="fa fa-shopping-basket"></i>Guest</a></li>
+                <li><a class="#" href="#menu"><i class="fa fa-shopping-bag"></i> Info</a></li>
+                <button id="toggle-dark-mode" class="btn toggle-dark-mode">Dark Mode</button>
+                <audio src="Nothing's Gonna Change My Love For You.mp3" autoplay loop type="audio/mpeg">
+                
+            </ul>
+        </div>
+        </main>
+    <!-- <button id="toggle-dark-mode" class="btn toggle-dark-mode">Dark Mode</button> -->
     <div class="container">
         <!-- Cover Page -->
-        <section class="page cover">
+        <section class="page cover" id="home">  
+                     
             <div class="title">
                 <p>The Wedding of</p>
             </div>
+            <div class="lol">
             <div class="genap">
                 <div class="border">
-                    <img src="https://png.pngtree.com/png-clipart/20230410/ourmid/pngtree-beautiful-circle-border-with-green-and-gold-leaves-png-image_6697106.png" alt="" class="border">
+                    <img src="https://static.vecteezy.com/system/resources/previews/009/597/206/original/rose-flower-and-botanical-leaf-digital-painted-png.png" alt="" class="border">
                 </div>
-            </div>
+            </div></div>
             <div class="person">
+                
+                
                 <h1 class="tle">Vino & Karina</h1>
+               
                 <p>Thursday, August 29, 2024</p>
             </div>
             <div class="guest-name">
                 <p>We are waiting for your attendance</p>
                 <p>Albob, BSc.</p>
+                
             </div>
+            <div class="space" style="height: 1.8rem;" id="home"></div>     
+        </section>
         </section>
 
         <!-- Invitation Page -->
         <section class="page invitation">
+            <div class="space" style="height: 1.8rem;" id="us"></div>
             <h2 class="tle">The beloved</h2>
             <h1 class="person2">Vino & Karina</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe sunt dicta quam necessitatibus aliquid. Explicabo consequuntur non voluptates molestias quas optio veritatis natus ab distinctio aspernatur quaerat, tenetur id alias.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ex exercitationem minima quo nobis ipsa. Ab dignissimos, at recusandae cupiditate quae perspiciatis dolores cumque, rerum, ratione molestiae quod maiores aperiam!</p>
+            
             <div class="card">
                 <div class="circle"></div>
-                <h1>Victoria Kimberly, SE.</h1>
+                <h1>Albob, BSc.</h1>
                 <div class="line"></div>
                 <p>Mr. Vino</p>
                 <p>&</p>
                 <p>Mrs. Karina</p>
             </div>
+            
         </section>
 
         <!-- Closing Page -->
         <section class="page closing">
-            <h2>Event countdown</h2>
+            <div class="space" style="height: 1.8rem;" id="menu"></div>
+            <div class="card mb-3">
+                <img src="https://media.weddingz.in/images/adb450f988c2e27be353ccff1fcfcb86/best-wedding-reception-halls-in-palace-ground-bangalore-to-host-an-extravagant-affair.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">The wedding of Vino & Karina</h5>
+                  <p class="card-text">🏡   Jl. Mayor Ruslan No.118, 9 Ilir, Kec. Ilir Tim. I, Kota Palembang, Sumatera Selatan 30114</h2>
             <div class="timer">
                 <h3 class="cd">Wedding countdown:</h3>
                 <div class="counter">
@@ -400,8 +751,15 @@
                 </div>
             </div>
             <p>We really appreciate your coming to our wedding party!</p>
+                  <a href="https://maps.app.goo.gl/TfFwQwP9kFrytusn6" class="btn btn-info">Location Gmaps</a>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
         </section>
     </div>
+
+</audio>
+
 
     <script>
         var countDownDate = new Date("August 29, 2024 11:36:10").getTime();
@@ -448,6 +806,13 @@
             const isDarkMode = document.body.classList.toggle('dark-mode');
             saveDarkModePreference(isDarkMode);
         });
+
+        $('.one-fourth').click(function() {
+  var name = $(this).find('p').html();
+  alert('You clicked ' + name);
+});           
+       
     </script>
+    
 </body>
 </html>
